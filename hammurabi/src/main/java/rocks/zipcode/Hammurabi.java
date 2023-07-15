@@ -49,11 +49,75 @@ The market price for land fluctuates yearly
             }
             int feeding = askHowMuchGrainToFeedPeople(getBushels());
             int planting = askHowManyAcresToPlant(getAcres(),getPeople(),getBushels());
+            int plaguedead = plagueDeaths(getPeople());
+            int starved = starvationDeaths(getPeople(),feeding);
+            int immigrants =0;
+            if(starved ==0)
+            {
+                 immigrants = immigrants(getPeople(), getAcres(), getBushels());
+            }
+            int harvest = harvest(getAcres(),planting);
+            int graineatenbyrats = grainEatenByRats(getBushels());
+            int newcostofLand = calcnewcostofLand();
+           gamecalc(plaguedead);
+           gamecalcstarved(starved);
+          // gamecalcuprising(starved);
+           gamecalcimmigrants(immigrants,starved);
+           gamecalcHarvest(harvest);
 
+           calcnewcostofLand();
 
 
         }
     }
+    public void gamecalc(int plaguedead)
+    {
+        if(plaguedead!=0)
+        {
+            setPeople(getPeople()-plaguedead);
+            System.out.println(plaguedead + "people died from the plague!");
+        }
+    }
+
+    public void gamecalcstarved(int starved)
+    {
+        if(starved!=0)
+        {
+            setPeople(getPeople()-starved);
+            System.out.println(starved + " people died from starvation!");
+        }
+    }
+
+    public void gamecalcuprising(boolean uprising)
+    {
+        if(uprising==true)
+        {
+            System.out.println("YOU HAVE BEEN KICKED OUT VIA UPRISING HAMMURABI!");
+        }
+    }
+
+    public void gamecalcimmigrants(int immigrants, int starved)
+    {
+        if(starved ==0)
+        {
+            setPeople(getPeople()+immigrants);
+            System.out.println(immigrants+  " immigrants came to the village");
+        }
+    }
+
+    public void  gamecalcHarvest(int harvest)
+    {
+        setBushels(bushels+harvest);
+    }
+
+    public int calcnewcostofLand() {
+        return rand.nextInt(17,24);
+    }
+
+
+
+
+
 
     //Prints the question How many acres would you like to buy, takes that result, compares it to the land value and the number they entered
     //if that is fine then it returns that number.
@@ -83,8 +147,6 @@ The market price for land fluctuates yearly
         System.out.println(sb.toString());
         return sb.toString();
     }
-
-
     public int askHowManyAcresToSell(int acresOwned) {
         System.out.println("How many acres would you like to sell?");
         int selling = scan.nextInt();
@@ -161,7 +223,10 @@ The market price for land fluctuates yearly
 
     public  int harvest(int acres, int bushelsUsedAsSeed){
         int random = rand.nextInt(1,7);
-        return acres * random;
+        if(bushelsUsedAsSeed*2>=acres) {
+            return acres * random;
+        }
+        else return (bushelsUsedAsSeed/2)*acres;
 
     }
 
