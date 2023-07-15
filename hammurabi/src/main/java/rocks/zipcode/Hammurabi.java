@@ -112,12 +112,18 @@ The market price for land fluctuates yearly
         return 0;
 
     }
-
+    //40% chance of infestation. If so, they will eat 10 - 30% of our grains
+    //returns the amount of grains eaten by rats
     public static int grainEatenByRats(int bushels){
-        return 0;
+        int grainsEaten = 0;
+        //40% infection chance
+        if (rand.nextInt(100) + 1 <= 40) {
+            grainsEaten = (bushels * rand.nextInt(30) + 1) / 100;
+        }
 
-
+        return grainsEaten;
     }
+
     public Hammurabi getHammurabi()
     {
         return this;

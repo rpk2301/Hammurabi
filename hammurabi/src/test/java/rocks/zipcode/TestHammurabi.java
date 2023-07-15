@@ -99,6 +99,8 @@ public class TestHammurabi {
     @Test
     public void testGrainEatenByRats() {
         //Given
+        Hammurabi.grainEatenByRats(100);
+
         //When
         //Then
     }
