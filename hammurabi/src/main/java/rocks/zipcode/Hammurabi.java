@@ -4,6 +4,11 @@ import java.util.Scanner;
 public class Hammurabi {
 
     Integer people = 100;
+
+    public void setBushels(Integer bushels) {
+        this.bushels = bushels;
+    }
+
     Integer bushels = 2800;
     Integer acres = 1000;
     Integer landValue = 19;
@@ -32,7 +37,16 @@ The market price for land fluctuates yearly
             getHammurabi().Message();
             //Prints the question How many acres would you like to buy, takes that result, compares it to the land value and the number they entered
             //    //if that is fine then it returns that number.
-            getHammurabi().askHowManyAcresToBuy(getLandValue(),getBushels());
+            int acres = askHowManyAcresToBuy(getLandValue(),getBushels());
+            int selling = 0;
+            if(acres==0)
+            {
+              selling=askHowManyAcresToSell(getAcres());
+            }
+            int feeding = askHowMuchGrainToFeedPeople(getBushels());
+            int planting = askHowManyAcresToPlant(getAcres(),getPeople(),getBushels());
+
+
 
         }
     }
@@ -67,25 +81,60 @@ The market price for land fluctuates yearly
     }
 
 
-    public static int askHowManyAcresToSell(int acresOwned) {
-        return 0;
+    public int askHowManyAcresToSell(int acresOwned) {
+        System.out.println("How many acres would you like to sell?");
+        int selling = scan.nextInt();
+        if(selling>acresOwned)
+        {
+            System.out.println("You only have " + acresOwned + " acres, you cannot sell more than you have!");
+            askHowManyAcresToSell(acresOwned);
+        }
+        return selling;
+    }
+
+    public  int askHowMuchGrainToFeedPeople(int bushels) {
+        System.out.println("How much grain would you like to feed your people?");
+        int feeding = scan.nextInt();
+        if(feeding>bushels)
+        {
+            System.out.println("You only have " + bushels +  ", you cannot feed your people more than you have!");
+            askHowMuchGrainToFeedPeople(bushels);
+        }
+        return feeding;
 
     }
 
-    public static int askHowMuchGrainToFeedPeople(int bushels) {
-        return 0;
+
+    public  int askHowManyAcresToPlant(int acresOwned, int population, int bushels) {
+
+        System.out.println("How many acres would you like to plant with grain?");
+        int planting = scan.nextInt();
+        if(acresOwned<planting)
+        {
+          System.out.println("O Great Hammurabi, surely you jest! We only own " + acresOwned + " acres!");
+          askHowManyAcresToPlant(acresOwned, population, bushels);  //2
+        }
+        else if((population*10)<planting)
+        {
+            System.out.println("O Great Hammurabi, our Kingdom cannot handle that much planting. We have but " + population + " people");
+            askHowManyAcresToPlant(acresOwned, population, bushels);
+        }
+        else if(bushels*2<planting) {
+            System.out.println("O Great Hammurabi, our Kingdom cannot handle that much planting. We have but " + bushels + " bushels");
+            askHowManyAcresToPlant(acresOwned, population, bushels);
+        }
+        setBushels(bushels-(2*planting));
+        return planting;
 
     }
 
-
-    public static int askHowManyAcresToPlant(int acresOwned, int population, int bushels) {
-        return 0;
-
-    }
-
-    public static int plagueDeaths(int population){
-        return 0;
-
+    public  int plagueDeaths(int population){
+        int chance = rand.nextInt(100);
+        if(chance<16)
+        {
+            return (int) (population-(population*.15));
+        }
+        else return 0;
     }
 
     public static int starvationDeaths(int population, int bushelsFedToPeople){
@@ -93,24 +142,28 @@ The market price for land fluctuates yearly
 
     }
 
-    public static boolean uprising(int population, int howManyPeopleStarved){
-        return false;
+    public  boolean uprising(int population, int howManyPeopleStarved){
+        if(population*.45>howManyPeopleStarved)
+        {
+            return false;
+        }
+        else return true;
     }
 
-    public static int immigrants(int population, int acresOwned, int grainInStorage){
-        return 0;
+    public  int immigrants(int population, int acresOwned, int grainInStorage){
+        return ((20*getAcres() + getBushels())/(100*getPeople()) +1);
     }
 
 
-    public static int harvest(int acres, int bushelsUsedAsSeed){
-        return 0;
+    public  int harvest(int acres, int bushelsUsedAsSeed){
+        int random = rand.nextInt(1,7);
+        return acres * random;
 
     }
 
-    public static int grainEatenByRats(int bushels){
+    public  int grainEatenByRats(int bushels)
+    {
         return 0;
-
-
     }
     public Hammurabi getHammurabi()
     {
