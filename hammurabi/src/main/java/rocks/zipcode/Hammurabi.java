@@ -127,7 +127,7 @@ The market price for land fluctuates yearly
         return planting;
 
     }
-
+//forcing ocmmit 
     public  int plagueDeaths(int population){
         int chance = rand.nextInt(100);
         if(chance<16)
