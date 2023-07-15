@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Hammurabi.iml" filepath="$PROJECT_DIR$/.idea/Hammurabi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hammurabi/hammurabi.iml" filepath="$PROJECT_DIR$/hammurabi/hammurabi.iml" />
     </modules>
   </component>
 </project>

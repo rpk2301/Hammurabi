@@ -30,7 +30,7 @@ The market price for land fluctuates yearly
         {
             //Prints Menu
             getHammurabi().Message();
-            ////Prints the question How many acres would you like to buy, takes that result, compares it to the land value and the number they entered
+            //Prints the question How many acres would you like to buy, takes that result, compares it to the land value and the number they entered
             //    //if that is fine then it returns that number.
             getHammurabi().askHowManyAcresToBuy(getLandValue(),getBushels());
 

@@ -1,8 +1,12 @@
+package rocks.zipcode;
+
 import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcode.Hammurabi;
 
-public class TestGameCalc {
+public class TestHammurabi {
+    
+    
 
     @Test
     public void testAskHowManyAcresToBuy() {
@@ -84,22 +88,40 @@ public class TestGameCalc {
     @Test
     public void testGetPeople() {
         //Given
+        Hammurabi ham = new Hammurabi();
+
         //When
+        int actualPeople = ham.getPeople();
+        int expectedPeople = 100;
+
         //Then
+        Assert.assertEquals(expectedPeople, actualPeople);
     }
 
     @Test
     public void testGetLandValue() {
         //Given
+        Hammurabi ham = new Hammurabi();
+
         //When
+        int actualLandValue = ham.getLandValue();
+        int expectedLandValue = 19;
+
         //Then
+        Assert.assertEquals(expectedLandValue, actualLandValue);
     }
 
     @Test
     public void testGetBushels() {
         //Given
+        Hammurabi ham = new Hammurabi();
+
         //When
+        int actualBushels = ham.getBushels();
+        int expectedBushels = 2800;
+
         //Then
+        Assert.assertEquals(expectedBushels, actualBushels);
     }
 
     @Test
@@ -114,5 +136,8 @@ public class TestGameCalc {
         //Then
         Assert.assertEquals(expectedAcres, actualAcres);
     }
+
+
+
 
 }
