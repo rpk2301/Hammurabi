@@ -28,7 +28,7 @@ The market price for land fluctuates yearly
     {
         while(1>0)
         {
-     
+
 
         }
     }
