@@ -142,8 +142,14 @@ The market price for land fluctuates yearly
     }
 
     public static int starvationDeaths(int population, int bushelsFedToPeople){
-        return 0;
+        double deathRate = (double) ((population * 20) - bushelsFedToPeople) / 20;
+        deathRate = Math.ceil(deathRate);
+        int ans = 0;
+        if (deathRate > 0) {
+            ans = (int) deathRate;
+        }
 
+        return ans;
     }
 
     public  boolean uprising(int population, int howManyPeopleStarved){
@@ -165,9 +171,12 @@ The market price for land fluctuates yearly
 
     }
 
-    public int grainEatenByRats(int bushels)
-    {
-        return 0;
+    public int grainEatenByRats(int bushels) {
+        int bushelsRatted = 0;
+        if (rand.nextInt(100)+1 <= 40 ) {
+            bushelsRatted = bushels - ((bushels * rand.nextInt(20) + 10) / 100);
+        }
+        return bushelsRatted;
     }
     public Hammurabi getHammurabi()
     {
