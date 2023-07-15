@@ -3,6 +3,10 @@ import java.util.Random;
 import java.util.Scanner;
 public class Hammurabi {
 
+    public void setPeople(Integer people) {
+        this.people = people;
+    }
+
     Integer people = 100;
 
     public void setBushels(Integer bushels) {
@@ -41,7 +45,7 @@ The market price for land fluctuates yearly
             int selling = 0;
             if(acres==0)
             {
-              selling=askHowManyAcresToSell(getAcres());
+                selling=askHowManyAcresToSell(getAcres());
             }
             int feeding = askHowMuchGrainToFeedPeople(getBushels());
             int planting = askHowManyAcresToPlant(getAcres(),getPeople(),getBushels());
@@ -51,7 +55,7 @@ The market price for land fluctuates yearly
         }
     }
 
-//Prints the question How many acres would you like to buy, takes that result, compares it to the land value and the number they entered
+    //Prints the question How many acres would you like to buy, takes that result, compares it to the land value and the number they entered
     //if that is fine then it returns that number.
     public  int askHowManyAcresToBuy(int price, int bushels) {
         System.out.println("How Many Acres Would You Like To Buy?");
@@ -66,17 +70,17 @@ The market price for land fluctuates yearly
     //Prints the Hammurabi menu.
     public String Message()
     {
-       sb.delete(0,sb.length());
-       sb.append("O great Hammurabi! \n");
-       sb.append("You are in year 1 of your ten year rule. \n");
-       sb.append("In the previous year 0 people starved to death. \n");
-       sb.append("In the previous year 5 people entered the kingdom. \n");
-       sb.append("The population is now " + getPeople() + "\n");
-       sb.append("We harvested 3000 bushels at 3 bushels per acre. \n");
-       sb.append("Rats destroyed 200 bushels, leaving " + getBushels() + " bushels in storage. \n");
-       sb.append("The city owns "+getAcres()+" acres of land. \n");
-       sb.append("Land is currently worth " + getLandValue()+" bushels per acre. \n");
-       System.out.println(sb.toString());
+        sb.delete(0,sb.length());
+        sb.append("O great Hammurabi! \n");
+        sb.append("You are in year 1 of your ten year rule. \n");
+        sb.append("In the previous year 0 people starved to death. \n");
+        sb.append("In the previous year 5 people entered the kingdom. \n");
+        sb.append("The population is now " + getPeople() + "\n");
+        sb.append("We harvested 3000 bushels at 3 bushels per acre. \n");
+        sb.append("Rats destroyed 200 bushels, leaving " + getBushels() + " bushels in storage. \n");
+        sb.append("The city owns "+getAcres()+" acres of land. \n");
+        sb.append("Land is currently worth " + getLandValue()+" bushels per acre. \n");
+        System.out.println(sb.toString());
         return sb.toString();
     }
 
@@ -111,8 +115,8 @@ The market price for land fluctuates yearly
         int planting = scan.nextInt();
         if(acresOwned<planting)
         {
-          System.out.println("O Great Hammurabi, surely you jest! We only own " + acresOwned + " acres!");
-          askHowManyAcresToPlant(acresOwned, population, bushels);  //2
+            System.out.println("O Great Hammurabi, surely you jest! We only own " + acresOwned + " acres!");
+            askHowManyAcresToPlant(acresOwned, population, bushels);  //2
         }
         else if((population*10)<planting)
         {
@@ -127,7 +131,7 @@ The market price for land fluctuates yearly
         return planting;
 
     }
-//forcing ocmmit 
+    //forcing ocmmit
     public  int plagueDeaths(int population){
         int chance = rand.nextInt(100);
         if(chance<16)
@@ -161,7 +165,7 @@ The market price for land fluctuates yearly
 
     }
 
-    public  int grainEatenByRats(int bushels)
+    public int grainEatenByRats(int bushels)
     {
         return 0;
     }
