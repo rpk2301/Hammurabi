@@ -84,15 +84,26 @@ public class TestHammurabi {
     @Test
     public void testImmigrants() {
         //Given
+        Hammurabi ham = new Hammurabi();
+
         //When
+        int actual = ham.immigrants(20, 30, 40);
+        int expected = 3;
+
         //Then
+        Assert.assertEquals(expected,actual);
     }
 
     @Test
     public void testHarvest() {
         //Given
+        Hammurabi ham = new Hammurabi();
+
         //When
+        int expectedHarvest = ham.harvest(100, 500);
+
         //Then
+        Assert.assertTrue(expectedHarvest >= 100 && expectedHarvest <=700);
     }
 
     @Test
@@ -107,8 +118,15 @@ public class TestHammurabi {
     @Test
     public void testGetHammurabi() {
         //Given
-        //When
-        //Then
+//        Hammurabi ham = new Hammurabi();
+//
+//        //When
+//        Hammurabi expectedHammurabi = ham.getHammurabi();
+//        Hammurabi actualHammurabi == what;
+//
+//        //Then
+//
+//        Assert.assertEquals(expectedHammurabi, actualHammurabi);
     }
 
     @Test
