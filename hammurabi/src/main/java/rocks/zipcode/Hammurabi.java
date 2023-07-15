@@ -89,8 +89,14 @@ The market price for land fluctuates yearly
     }
 
     public static int starvationDeaths(int population, int bushelsFedToPeople){
-        return 0;
+        double deathToll = (double) ((population * 20) - bushelsFedToPeople) / 20;
+        int deadPeople = (int) Math.ceil(deathToll);
+        int result = 0;
+        if (deadPeople > result) {
+            result = deadPeople;
+        }
 
+        return result;
     }
 
     public static boolean uprising(int population, int howManyPeopleStarved){
@@ -119,6 +125,7 @@ The market price for land fluctuates yearly
     public Integer getPeople() {
         return people;
     }
+    public void setPeople(Integer people) {this.people = people;}
     public Integer getLandValue() {
         return landValue;
     }
