@@ -12,8 +12,16 @@ public class TestHammurabi {
     @Test
     public void testAskHowManyAcresToBuy() {
         //Given
-        //When
-        //Then
+//        Hammurabi ham = new Hammurabi();
+//
+//        //When
+//
+//
+//        int actualNum = ham.askHowManyAcresToBuy(8, 20);
+//        int expectedNum = 0;
+//
+//        //Then
+//        Assert.assertEquals(expectedNum, actualNum);
     }
 
     @Test
@@ -77,8 +85,15 @@ public class TestHammurabi {
     @Test
     public void testUprising() {
         //Given
+        Hammurabi ham = new Hammurabi();
+
         //When
+        boolean actualOutcome = ham.uprising(100, 25);
+        boolean expectedOutcome = false;
+
         //Then
+        Assert.assertTrue(actualOutcome == expectedOutcome);
+
     }
 
     @Test
@@ -109,24 +124,28 @@ public class TestHammurabi {
     @Test
     public void testGrainEatenByRats() {
         //Given
-
+        Hammurabi ham = new Hammurabi();
 
         //When
+        int actualRats = ham.grainEatenByRats(100);
+        int expectedRats1 = 100;
+
         //Then
+        Assert.assertTrue(actualRats <= 30 || actualRats >= 10 || actualRats == expectedRats1);
+
     }
 
     @Test
     public void testGetHammurabi() {
         //Given
-//        Hammurabi ham = new Hammurabi();
-//
-//        //When
-//        Hammurabi expectedHammurabi = ham.getHammurabi();
-//        Hammurabi actualHammurabi == what;
-//
-//        //Then
-//
-//        Assert.assertEquals(expectedHammurabi, actualHammurabi);
+        Hammurabi ham = new Hammurabi();
+
+        //When
+        Hammurabi expectedHammurabi = ham.getHammurabi();
+
+        //Then
+
+        Assert.assertEquals(ham, expectedHammurabi);
     }
 
     @Test
