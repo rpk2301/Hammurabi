@@ -91,7 +91,7 @@ The market price for land fluctuates yearly
             fb.append("In the previous year " + immigrants + " immigrants entered the kingdom \n");
             fb.append("The plague killed " + plaguedead + " this year!");
             fb.append("The population is now: " + getPeople() + " \n");
-            fb.append("We harvested " + harvest + " barrels at " + Math.ceil((double) harvest / planting) + " per acre\n");
+            fb.append("We harvested " + harvest + " barrels at " + getperacre(harvest,planting) + " per acre\n");
             fb.append("Rats destroyed " + graineatenbyrats + " bushels. We now have " + getBushels() + " in storage\n");
             fb.append("The city owns " + getAcres() + " acres of land \n");
             fb.append("Land is currently worth " + landValue + " bushels per acre \n");
@@ -100,6 +100,15 @@ The market price for land fluctuates yearly
 
         }
         finalsummary();
+    }
+
+    public double getperacre(int harvest, int planting)
+    {
+        if(planting!=0 ) {
+            return Math.ceil((double) harvest / planting);
+        }
+        else return 0.0;
+
     }
         public void finalsummary()
     {
