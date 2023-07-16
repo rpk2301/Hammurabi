@@ -7,6 +7,7 @@
     <list default="true" id="57af1fdf-76cc-4b0d-8835-454e7d100666" name="Changes" comment="Fix conflict?">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rocks/zipcode/Hammurabi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rocks/zipcode/Hammurabi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/rocks/zipcode/Hammurabi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/rocks/zipcode/Hammurabi.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,12 +64,28 @@
       <option name="project" value="LOCAL" />
       <updated>1689441106234</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added calculations">
+      <option name="closed" value="true" />
+      <created>1689454415799</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1689454415799</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed conflicts" />
     <MESSAGE value="Fix conflict?" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix conflict?" />
+    <MESSAGE value="added calculations" />
+    <option name="LAST_COMMIT_MESSAGE" value="added calculations" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="rocks.zipcode.Hammurabi" memberName="bushels" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
