@@ -344,8 +344,10 @@ public void gamecalcbuying(int acres2)
 
     public  int harvest(int acres, int bushelsUsedAsSeed){
         int random = rand.nextInt(1,7);
-         {
-            return bushelsUsedAsSeed * random;
+        if (bushelsUsedAsSeed >= acres * 2) {
+            return acres * random;
+        } else {
+            return ((bushelsUsedAsSeed - acres * 2) / -2) * random;
         }
 
 
